@@ -4,6 +4,7 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
+import br.senai.sp.jandira.BMI.UserDataScreen.UserDataScreen
 import sp.senai.jandira.bmi.screens.HomeScreen
 import sp.senai.jandira.bmi.ui.theme.BMITheme
 
@@ -13,7 +14,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BMITheme {
-               HomeScreen()
+               //HomeScreen()
+                UserDataScreen()
             }
         }
     }

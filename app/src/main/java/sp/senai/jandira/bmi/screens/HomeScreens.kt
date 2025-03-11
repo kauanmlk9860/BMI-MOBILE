@@ -18,9 +18,7 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.Card
 import androidx.compose.material3.Icon
 import androidx.compose.material3.OutlinedTextField
-
 import androidx.compose.material3.Text
-import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
@@ -28,7 +26,6 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.input.KeyboardCapitalization
@@ -38,10 +35,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import sp.senai.jandira.bmi.R
 
-
 @Composable
 fun HomeScreen(modifier: Modifier = Modifier) {
-
 
     var nomeState = remember {
         mutableStateOf(value = "")
@@ -57,68 +52,55 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         Color(0xFF8B71BD),
                     )
                 )
-
             )
-
-
     ) {
         Column(
-            modifier = Modifier
-                .fillMaxSize(),
+            modifier = Modifier.fillMaxSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceAround
         ) {
             Image(
                 painter = painterResource(R.drawable.halterofilista),
                 contentDescription = stringResource(R.string.Logo),
-                modifier = Modifier
-                    .padding(vertical = 60.dp)
+                modifier = Modifier.padding(vertical = 60.dp)
             )
             Text(
                 text = stringResource(R.string.welcome),
                 fontSize = 32.sp,
                 color = Color.White,
-                modifier = Modifier
-                    .padding(bottom = 60.dp)
+                modifier = Modifier.padding(bottom = 60.dp)
             )
             Card(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .height(150.dp),
+                modifier = Modifier.height(150.dp),
                 shape = RoundedCornerShape(
                     topStart = 48.dp,
                     topEnd = 48.dp
                 )
             ) {
                 Column(
-                    modifier = Modifier
-                        .padding(start = 40.dp, top = 40.dp)
+                    modifier = Modifier.padding(start = 40.dp, top = 40.dp)
                 ) {
                     Text(
                         text = stringResource(R.string.your_name),
                         fontSize = 30.sp,
                     )
                     OutlinedTextField(
-                        value = "",
-                        onValueChange = { },
+                        value = nomeState.value,
+                        onValueChange = { nomeState.value = it },
                         label = {
                             Text(text = "Digite o seu nome")
                         },
-                        modifier = Modifier,
-
                         leadingIcon = {
                             Icon(
                                 imageVector = Icons.Default.Email,
                                 contentDescription = "",
                                 tint = Color(0xFF192777)
-
                             )
                         },
                         keyboardOptions = KeyboardOptions(
                             keyboardType = KeyboardType.Text,
                             capitalization = KeyboardCapitalization.Words
                         ),
-
                         trailingIcon = {
                             Icon(
                                 imageVector = Icons.Default.LocationOn,
@@ -126,13 +108,10 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                                 tint = Color(0xFF192777)
                             )
                         }
-
                     )
                 }
-
                 Column(
-                    modifier = Modifier
-                        .padding(top = 220.dp, start = 300.dp)
+                    modifier = Modifier.padding(top = 220.dp, start = 300.dp)
                 ) {
                     Button(
                         onClick = {},
@@ -145,7 +124,6 @@ fun HomeScreen(modifier: Modifier = Modifier) {
                         Icon(
                             imageVector = Icons.Filled.ArrowForward,
                             contentDescription = ""
-
                         )
                     }
                 }

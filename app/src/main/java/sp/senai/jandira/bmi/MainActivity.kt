@@ -4,8 +4,8 @@ import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
-import br.senai.sp.jandira.BMI.UserDataScreen.UserDataScreen
-import sp.senai.jandira.bmi.screens.HomeScreen
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.tooling.preview.Preview
 import sp.senai.jandira.bmi.ui.theme.BMITheme
 
 class MainActivity : ComponentActivity() {
@@ -14,10 +14,18 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             BMITheme {
-               //HomeScreen()
-                UserDataScreen()
+                //HomeScreen()
+                //UserDataScreen()
+                BMIResultScreen()
             }
         }
     }
 }
+
+@Composable
+fun BMIResultScreen() {
+    androidx.compose.material3.Text(text = "Resultado do IMC")
+}
+
+
 
